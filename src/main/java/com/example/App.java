@@ -4,14 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.example.dto.Apple;
+import com.example.format.AppleFullPrettyPrint;
+import com.example.format.ApplePrettyPrint;
+import com.example.format.AppleShortPrettyPrint;
 import com.example.predicate.AppleGreenColorPredicate;
 import com.example.property.Color;
-import com.example.sort.InventoryFilter;
+import com.example.util.InventoryFilter;
 
-/**
- * Hello world!
- *
- */
+
 public class App {
     static List<Apple> apples = new ArrayList<>();
 
@@ -24,8 +24,10 @@ public class App {
         apples.add(new Apple(Color.RED, 100));
 
         List<Apple> result = InventoryFilter.filterApples(apples, new AppleGreenColorPredicate());
+        ApplePrettyPrint applePrint = new AppleShortPrettyPrint();
         for (Apple apple : result) {
-            System.out.println(apple.toString());
+            //System.out.println(apple.toString());
+            applePrint.prettyPrint(apple);
         }
 
     }

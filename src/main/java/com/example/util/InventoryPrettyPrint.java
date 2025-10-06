@@ -7,8 +7,8 @@ import com.example.format.ApplePrettyPrint;
 
 public class InventoryPrettyPrint {
 
-    static void print(List<Apple> apples, ApplePrettyPrint app) {
-        for (Apple apple : apples) {
+    static <T> void print(List<T> apples, ApplePrettyPrint<T> app) {
+        for (T apple : apples) {
             app.prettyPrint(apple);
         }
     }
